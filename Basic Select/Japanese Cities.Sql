@@ -1,0 +1,3 @@
+# Author: Ayan Hussain
+
+SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
