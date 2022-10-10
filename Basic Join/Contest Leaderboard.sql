@@ -1,0 +1,7 @@
+# Author: Ayan Hussain
+SELECT H.hacker_id, H.NAME, SUM(SCORE) AS TS
+FROM HACKERS H JOIN (SELECT S.hacker_id, MAX(SCORE) AS SCORE FROM SUBMISSIONS S GROUP BY HACKER_ID, CHALLENGE_ID ) AS SS  
+ON H.hacker_id = SS.hacker_id
+GROUP BY H.hacker_id, H.NAME
+HAVING TS > 0
+ORDER BY TS DESC, H.hacker_id ASC
